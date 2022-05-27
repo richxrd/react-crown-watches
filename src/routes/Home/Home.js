@@ -1,7 +1,16 @@
 import React from "react";
+import { Fade } from "react-reveal";
 
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <Fade top delay={250}>
+            <div>Home</div>
+
+            {/* Background Image - With Shop All */}
+
+            {/* Categories - Mens, Womens */}
+        </Fade>
+    );
 };
 
 export default Home;
