@@ -10,18 +10,18 @@ export const StyledNav = styled(Toolbar)(({ theme }) => ({
 }));
 
 export const StyledLink = styled(Link)(({ theme }) => ({
-    width: "25%",
+    textDecoration: "none",
+    color: "white",
 }));
 
 export const StyledTitle = styled("h2")(({ theme }) => ({
     letterSpacing: "2px",
     textAlign: "center",
-    width: "50%",
+    margin: "0 auto",
 }));
 
 export const NavButtonGroup = styled("div")(({ theme }) => ({
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "space-around",
     gap: "1rem",
-    width: "25%",
 }));
