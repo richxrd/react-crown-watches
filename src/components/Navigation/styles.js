@@ -23,5 +23,5 @@ export const StyledTitle = styled("h2")(({ theme }) => ({
 export const NavButtonGroup = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "space-around",
-    gap: "1rem",
+    gap: "1.5rem",
 }));

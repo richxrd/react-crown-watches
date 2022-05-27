@@ -14,7 +14,7 @@ const Navigation = () => {
         <>
             <AppBar position="sticky">
                 <StyledNav>
-                    <Fade top>
+                    <Fade top cascade>
                         <StyledLink to="/">
                             <Logo />
                         </StyledLink>
@@ -22,13 +22,9 @@ const Navigation = () => {
                         <StyledTitle>CROWN</StyledTitle>
 
                         <NavButtonGroup>
-                            {/* Shop */}
-                            <StyledLink to="/shop">
-                                <h4>Shop</h4>
-                            </StyledLink>
                             {/* User */}
-
                             {user ? <h4>Sign Out</h4> : <h4>Sign In</h4>}
+
                             {/* Shopping Cart */}
                             <CartIcon />
                         </NavButtonGroup>
