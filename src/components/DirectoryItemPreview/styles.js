@@ -3,6 +3,7 @@ import { Button, Paper, styled } from "@mui/material";
 export const StyledPaper = styled(Paper)(({ theme }) => ({
     height: "350px",
     width: "40%",
+    maxWidth: "600px",
 }));
 
 export const StyledBackground = styled("div")(({ theme }) => ({
