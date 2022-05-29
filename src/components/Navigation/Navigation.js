@@ -1,14 +1,17 @@
-import { AppBar } from "@mui/material";
-import React, { useState } from "react";
-import { NavButtonGroup, StyledNav, StyledTitle, StyledLink } from "./styles";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { signOutUser } from "../../utils/firebase";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/userSelector";
 
+import { NavButtonGroup, StyledNav, StyledTitle, StyledLink } from "./styles";
+import { AppBar } from "@mui/material";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Fade } from "react-reveal";
 import CartIcon from "../CartIcon/CartIcon";
-import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
-    const [user, setUser] = useState(false);
+    const currentUser = useSelector(selectCurrentUser);
 
     const navigate = useNavigate();
 
@@ -16,6 +19,10 @@ const Navigation = () => {
         e.preventDefault();
 
         navigate("/");
+    };
+
+    const signOutHandler = async () => {
+        await signOutUser();
     };
 
     const authClick = () => {
@@ -35,8 +42,8 @@ const Navigation = () => {
 
                         <NavButtonGroup>
                             {/* User */}
-                            {user ? (
-                                <h3>Sign Out</h3>
+                            {currentUser ? (
+                                <h3 onClick={signOutHandler}>Sign Out</h3>
                             ) : (
                                 <h3 onClick={authClick}>Sign In</h3>
                             )}

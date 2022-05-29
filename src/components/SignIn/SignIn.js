@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import {
+    signInAuthWithEmailAndPassword,
+    signInWithGooglePopup,
+} from "../../utils/firebase.js";
 import FormInput from "../FormInput/FormInput.js";
 import {
     ButtonGroup,
@@ -22,8 +26,36 @@ const SignIn = () => {
         setFormData(defaultFormData);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const { user } = await signInAuthWithEmailAndPassword(
+                email,
+                password
+            );
+
+            resetForm();
+        } catch (error) {
+            switch (error.code) {
+                case "auth/wrong-password":
+                    alert("incorrect password");
+                    break;
+                case "auth/user-not-found":
+                    alert("user not found");
+                    break;
+                default:
+                    console.log(error);
+            }
+        }
+    };
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const signInWithGoogle = async () => {
+        await signInWithGooglePopup();
     };
 
     return (
@@ -31,7 +63,7 @@ const SignIn = () => {
             <StyledTitle>Already have an account?</StyledTitle>
             <span>Sign In With Email and Password</span>
 
-            <StyledForm>
+            <StyledForm onSubmit={handleSubmit}>
                 <FormInput
                     label="Email"
                     type="email"
@@ -57,7 +89,11 @@ const SignIn = () => {
                         SIGN IN
                     </SignInButton>
 
-                    <GoogleButton type="button" variant="contained">
+                    <GoogleButton
+                        type="button"
+                        variant="contained"
+                        onClick={signInWithGoogle}
+                    >
                         GOOGLE SIGN IN
                     </GoogleButton>
                 </ButtonGroup>
