@@ -1,0 +1,16 @@
+* {
+    /* Create Colors Here */
+    --colorGray: "#5D5C61";
+    --colorGrayLight: "#938E94";
+    --colorBlueLight: "#7395AE";
+    --colorBlue: "#557A95";
+    --colorTan: "#B0A295";
+
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}

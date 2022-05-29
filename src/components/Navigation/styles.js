@@ -18,10 +18,14 @@ export const StyledTitle = styled("h2")(({ theme }) => ({
     letterSpacing: "2px",
     textAlign: "center",
     margin: "0 auto",
+    cursor: "pointer",
+    width: "10%",
 }));
 
 export const NavButtonGroup = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "space-around",
+    alignItems: "center",
+    cursor: "pointer",
     gap: "1.5rem",
 }));

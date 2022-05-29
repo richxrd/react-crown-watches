@@ -5,7 +5,7 @@ import { ShoppingCart } from "@mui/icons-material";
 const CartIcon = () => {
     return (
         <StyledBadge badgeContent={3}>
-            <ShoppingCart />
+            <ShoppingCart fontSize="large" />
         </StyledBadge>
     );
 };

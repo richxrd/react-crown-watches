@@ -1,14 +1,26 @@
-import { AppBar, Badge } from "@mui/material";
+import { AppBar } from "@mui/material";
 import React, { useState } from "react";
 import { NavButtonGroup, StyledNav, StyledTitle, StyledLink } from "./styles";
 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Fade } from "react-reveal";
-import { ShoppingCart } from "@mui/icons-material";
 import CartIcon from "../CartIcon/CartIcon";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
     const [user, setUser] = useState(false);
+
+    const navigate = useNavigate();
+
+    const onTitleClick = (e) => {
+        e.preventDefault();
+
+        navigate("/");
+    };
+
+    const authClick = () => {
+        navigate("/auth");
+    };
 
     return (
         <>
@@ -19,11 +31,15 @@ const Navigation = () => {
                             <Logo />
                         </StyledLink>
 
-                        <StyledTitle>CROWN</StyledTitle>
+                        <StyledTitle onClick={onTitleClick}>CRWN</StyledTitle>
 
                         <NavButtonGroup>
                             {/* User */}
-                            {user ? <h4>Sign Out</h4> : <h4>Sign In</h4>}
+                            {user ? (
+                                <h3>Sign Out</h3>
+                            ) : (
+                                <h3 onClick={authClick}>Sign In</h3>
+                            )}
 
                             {/* Shopping Cart */}
                             <CartIcon />
