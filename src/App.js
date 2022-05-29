@@ -9,6 +9,7 @@ import {
     onAuthStateChangedListener,
 } from "./utils/firebase";
 import { setCurrentUser } from "./store/user/userActions";
+import Shop from "./routes/Shop/Shop";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/auth" element={<Auth />} />
+                <Route path="/shop" element={<Shop />} />
             </Routes>
         </>
     );
