@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Footer, Image, StyledButton, StyledContainer } from "./styles";
-// import { addItemToCart } from "../../store/cart/cartActions";
-// import { selectCartItems } from "../../store/cart/cartSelector";
+import { addItemToCart } from "../../store/cart/cartActions";
+import { selectCartItems } from "../../store/cart/cartSelector";
 
 const ProductCard = ({ product }) => {
     const { name, price, imageUrl } = product;
     const dispatch = useDispatch();
 
-    // const cartItems = useSelector(selectCartItems);
-    // const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
+    const cartItems = useSelector(selectCartItems);
+    const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
 
     return (
         <StyledContainer>
@@ -18,7 +18,9 @@ const ProductCard = ({ product }) => {
                 <span>{name}</span>
                 <span>${price}</span>
             </Footer>
-            <StyledButton variant="contained">Add to cart</StyledButton>
+            <StyledButton variant="contained" onClick={addProductToCart}>
+                Add to cart
+            </StyledButton>
         </StyledContainer>
     );
 };
