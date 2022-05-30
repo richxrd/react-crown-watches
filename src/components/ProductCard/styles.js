@@ -6,6 +6,7 @@ export const StyledContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     height: "450px",
     alignItems: "center",
+    position: "relative",
 }));
 
 export const Image = styled("img")(({ theme }) => ({
@@ -20,7 +21,7 @@ export const Image = styled("img")(({ theme }) => ({
 }));
 
 export const StyledButton = styled(Button)(({ theme }) => ({
-    width: "15%",
+    width: "80%",
     opacity: "0.9",
     position: "absolute",
     top: "300px",
@@ -29,14 +30,6 @@ export const StyledButton = styled(Button)(({ theme }) => ({
 
     "&:hover": {
         backgroundColor: "#938E94",
-    },
-
-    [theme.breakpoints.down("md")]: {
-        width: "40%",
-    },
-
-    [theme.breakpoints.down("sm")]: {
-        width: "60%",
     },
 }));
 

@@ -16,7 +16,6 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            {/* Background Image - With Shop All */}
             <Hero style={{ backgroundImage: `url${img}` }}>
                 <Fade top cascade delay={350}>
                     <StyledTitle>CRWN CLOTHING</StyledTitle>
@@ -30,12 +29,8 @@ const Home = () => {
                 </Fade>
             </Hero>
 
-            {/* Categories - Mens, Womens */}
-
             <Fade top distance="2.5rem">
-                {/* Stuff */}
                 <Directory />
-                {/* Stuff */}
             </Fade>
         </React.Fragment>
     );

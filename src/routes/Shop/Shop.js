@@ -5,8 +5,7 @@ import { useDispatch } from "react-redux";
 import { setCategories } from "../../store/category/categoryActions";
 import { getCategoriesAndDocuments } from "../../utils/firebase";
 import CategoriesPreview from "../CategoriesPreview/CategoriesPreview";
-// import CategoriesPreview from "../CategoriesPreview/CategoriesPreview";
-// import Category from "../Category/Category";
+import Category from "../Category/Category";
 
 const Shop = () => {
     const dispatch = useDispatch();
@@ -25,7 +24,7 @@ const Shop = () => {
     return (
         <Routes>
             <Route index element={<CategoriesPreview />} />
-            {/* <Route path=":category" element={<Category />} /> */}
+            <Route path=":category" element={<Category />} />
         </Routes>
     );
 };
