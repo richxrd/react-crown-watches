@@ -27,7 +27,7 @@ const App = () => {
     }, []);
 
     return (
-        <>
+        <React.Fragment>
             <Navigation />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -35,7 +35,7 @@ const App = () => {
                 <Route path="/shop/*" element={<Shop />} />
                 <Route path="/checkout" element={<Checkout />} />
             </Routes>
-        </>
+        </React.Fragment>
     );
 };
 
