@@ -7,6 +7,7 @@ export const StyledNav = styled(Toolbar)(({ theme }) => ({
     alignItems: "center",
     backgroundColor: "#B0A295",
     height: "100px",
+    userSelect: "none",
 }));
 
 export const StyledLink = styled(Link)(({ theme }) => ({

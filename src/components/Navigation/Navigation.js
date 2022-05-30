@@ -3,15 +3,18 @@ import { useNavigate } from "react-router-dom";
 import { signOutUser } from "../../utils/firebase";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/userSelector";
+import { selectIsCartOpen } from "../../store/cart/cartSelector";
 
 import { NavButtonGroup, StyledNav, StyledTitle, StyledLink } from "./styles";
 import { AppBar } from "@mui/material";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Fade } from "react-reveal";
 import CartIcon from "../CartIcon/CartIcon";
+import CartDropdown from "../CartDropdown/CartDropdown";
 
 const Navigation = () => {
     const currentUser = useSelector(selectCurrentUser);
+    const isCartOpen = useSelector(selectIsCartOpen);
 
     const navigate = useNavigate();
 
@@ -52,6 +55,7 @@ const Navigation = () => {
                             <CartIcon />
                         </NavButtonGroup>
                     </Fade>
+                    {isCartOpen && <CartDropdown />}
                 </StyledNav>
             </AppBar>
         </>

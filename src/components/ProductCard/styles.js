@@ -25,10 +25,10 @@ export const StyledButton = styled(Button)(({ theme }) => ({
     position: "absolute",
     top: "300px",
     display: "flex",
-    backgroundColor: "#557A95",
+    backgroundColor: "#5D5C61",
 
     "&:hover": {
-        backgroundColor: "#7395AE",
+        backgroundColor: "#938E94",
     },
 
     [theme.breakpoints.down("md")]: {
