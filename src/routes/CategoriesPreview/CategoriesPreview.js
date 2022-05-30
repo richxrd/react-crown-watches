@@ -5,8 +5,6 @@ import CategoryPreview from "../../components/CategoryPreview/CategoryPreview";
 import { StyledContainer } from "./styles";
 
 const CategoriesPreview = () => {
-    // const { categoriesMap } = useContext(CategoriesContext);
-
     const categoriesMap = useSelector(selectCategoriesMap);
 
     return (
