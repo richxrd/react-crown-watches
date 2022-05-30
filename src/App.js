@@ -10,6 +10,7 @@ import {
 } from "./utils/firebase";
 import { setCurrentUser } from "./store/user/userActions";
 import Shop from "./routes/Shop/Shop";
+import Checkout from "./routes/Checkout/Checkout";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/shop" element={<Shop />} />
+                <Route path="/checkout" element={<Checkout />} />
             </Routes>
         </>
     );
