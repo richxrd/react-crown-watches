@@ -5,7 +5,7 @@ import { selectCategoriesMap } from "../../store/category/categorySelector";
 import { ProductContainer, Title } from "./styles";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Container } from "@mui/material";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const Category = () => {
     const { category } = useParams();
@@ -18,12 +18,12 @@ const Category = () => {
 
     return (
         <Container>
-            <Fade top distance="25px">
+            <Fade triggerOnce duration={500}>
                 <Title>{category.toUpperCase()}</Title>
             </Fade>
 
             <ProductContainer>
-                <Fade top distance="20px" delay={300}>
+                <Fade triggerOnce duration={500}>
                     {products &&
                         products.map((product) => (
                             <ProductCard key={product.id} product={product} />

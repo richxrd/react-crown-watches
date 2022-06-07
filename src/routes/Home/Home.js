@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import Directory from "../../components/Directory/Directory";
 import { Hero, StyledButton, StyledTitle } from "./styles";
@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <React.Fragment>
             <Hero style={{ backgroundImage: `url${img}` }}>
-                <Fade top cascade delay={350}>
+                <Fade triggerOnce duration={500}>
                     <StyledTitle>CRWN WATCHES</StyledTitle>
                     <StyledButton
                         variant="contained"
@@ -29,7 +29,7 @@ const Home = () => {
                 </Fade>
             </Hero>
 
-            <Fade top distance="2.5rem">
+            <Fade triggerOnce duration={500}>
                 <Directory />
             </Fade>
         </React.Fragment>
