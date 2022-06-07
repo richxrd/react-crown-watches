@@ -8,7 +8,7 @@ import { selectIsCartOpen } from "../../store/cart/cartSelector";
 import { NavButtonGroup, StyledNav, StyledTitle, StyledLink } from "./styles";
 import { AppBar } from "@mui/material";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 
@@ -36,7 +36,7 @@ const Navigation = () => {
         <>
             <AppBar position="sticky">
                 <StyledNav>
-                    <Fade top cascade>
+                    <Fade triggerOnce cascade duration={500}>
                         <StyledLink to="/">
                             <Logo />
                         </StyledLink>

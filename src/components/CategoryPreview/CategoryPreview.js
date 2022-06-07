@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 import { StyledContainer, StyledPreview, StyledTitle } from "./styles";
@@ -13,7 +13,7 @@ const CategoryPreview = ({ title, products }) => {
 
     return (
         <StyledContainer>
-            <Fade top cascade distance="2rem">
+            <Fade triggerOnce cascade duration={500}>
                 <StyledTitle onClick={handleClick}>
                     {title.toUpperCase()}
                 </StyledTitle>
