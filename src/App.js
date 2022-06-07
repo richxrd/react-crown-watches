@@ -11,6 +11,7 @@ import {
 import { setCurrentUser } from "./store/user/userActions";
 import Shop from "./routes/Shop/Shop";
 import Checkout from "./routes/Checkout/Checkout";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const App = () => {
                 <Route path="/shop/*" element={<Shop />} />
                 <Route path="/checkout" element={<Checkout />} />
             </Routes>
+            <Footer />
         </React.Fragment>
     );
 };

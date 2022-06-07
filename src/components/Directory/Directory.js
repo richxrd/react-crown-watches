@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DirectoryItemPreview from "../DirectoryItemPreview/DirectoryItemPreview";
+import { addCollectionAndDocuments } from "../../utils/firebase";
 import { StyledDirectoryContainer } from "./styles";
+import SHOP_DATA from "../../shop-data";
 
 const Directory = () => {
     const CATEGORIES = [
@@ -8,21 +10,24 @@ const Directory = () => {
             id: 1,
             title: "Mens",
             imageUrl:
-                "https://images.unsplash.com/photo-1535891169584-75bcaf12e964?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+                "https://www.mvmt.com/on/demandware.static/-/Sites-MVMTUS-Library/default/dw4c424453/content-assets/Interstitial/MensWatches.jpg",
             route: "shop/mens",
         },
         {
             id: 2,
             title: "Womens",
             imageUrl:
-                "https://images.unsplash.com/photo-1483181957632-8bda974cbc91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+                "https://www.mvmt.com/on/demandware.static/-/Sites-MVMTUS-Library/default/dwb64fd86e/content-assets/Interstitial/WomensWatches.jpg",
             route: "shop/womens",
         },
     ];
 
+    useEffect(() => {
+        addCollectionAndDocuments("categories", SHOP_DATA);
+    }, []);
+
     return (
         <StyledDirectoryContainer>
-            {/* Categories - Mens, Womens */}
             {CATEGORIES.map((category) => (
                 <DirectoryItemPreview
                     key={category.id}

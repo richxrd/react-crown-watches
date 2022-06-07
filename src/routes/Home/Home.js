@@ -18,7 +18,7 @@ const Home = () => {
         <React.Fragment>
             <Hero style={{ backgroundImage: `url${img}` }}>
                 <Fade top cascade delay={350}>
-                    <StyledTitle>CRWN CLOTHING</StyledTitle>
+                    <StyledTitle>CRWN WATCHES</StyledTitle>
                     <StyledButton
                         variant="contained"
                         size="large"
