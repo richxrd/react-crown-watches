@@ -1,7 +1,7 @@
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { Tooltip } from "@mui/material";
 import React from "react";
-import { Container, Credits, Email, Links } from "./styles";
+import { Container, Credits, Links } from "./styles";
 
 const Footer = () => {
     return (

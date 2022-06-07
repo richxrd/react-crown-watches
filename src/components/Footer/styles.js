@@ -11,16 +11,11 @@ export const Container = styled("div")(({ theme }) => ({
 
 export const Credits = styled("div")(({ theme }) => ({
     fontSize: "14px",
-    color: "#3D56F0",
-}));
-
-export const Email = styled("div")(({ theme }) => ({
-    fontSize: "14px",
-    color: "#637381",
+    color: "#B0A295",
 }));
 
 export const Links = styled("div")(({ theme }) => ({
     display: "flex",
     gap: "20px",
-    color: "#637381",
+    color: "#5D5C61",
 }));
